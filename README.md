@@ -46,7 +46,7 @@
 ### 📜 权利与声明 / RIGHTS & NOTICE
 * **作者**: [Supremacy rule/XYZ]
 * **协议**: CC BY-NC-ND 4.0 (署名-非商用-禁止演绎)
-* **联系**: yht200857@gmail.com | [𝕏 @rule_supremacy](https://x.com/rule_supremacy)
+* **联系**: yht200857@gmail.com | yht200857@outlook.com | [𝕏 @rule_supremacy](https://x.com/rule_supremacy)
 
 <p align="right">
   <i>"In this wasteland, everyone is their own God."</i>
