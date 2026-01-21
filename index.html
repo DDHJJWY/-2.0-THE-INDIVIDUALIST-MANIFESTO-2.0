@@ -4,19 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE INDIVIDUALIST MANIFESTO 2.0</title>
-    <link rel="stylesheet" href="glitch.css">
+    <style>
+        /* 直接把样式写在这里，防止加载失败 */
+        body { margin: 0; background: #000; overflow: hidden; font-family: monospace; }
+        .p { position: absolute; color: #ff3e3e; font-weight: bold; pointer-events: none; }
+        #box { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 100; opacity: 0; transition: opacity 2s; width: 90%; }
+        h1 { color: #fff; text-shadow: 0 0 15px #ff0000; letter-spacing: 5px; font-size: 2rem; }
+        .btn { display: inline-block; padding: 12px 25px; border: 1px solid #f00; color: #f00; text-decoration: none; margin: 10px; transition: 0.3s; }
+        .btn:hover { background: #f00; color: #000; }
+    </style>
 </head>
 <body>
-
-    <div id="overlay">
-        <h1 class="title-glow">DECODED: MANIFESTO 2.0</h1>
-        <p style="color: #888;">Protocol successfully initialized.</p>
-        <div class="btn-container">
-            <a href="index_zh.html" class="enter-btn">中文/双语版</a>
-            <a href="index_en.html" class="enter-btn">ENGLISH ONLY</a>
+    <div id="box">
+        <h1>DECODED: MANIFESTO 2.0</h1>
+        <div style="margin-top:30px;">
+            <a href="index_zh.html" class="btn">进入双语主站</a>
+            <a href="index_en.html" class="btn">ENGLISH ONLY</a>
         </div>
     </div>
-
-    <script src="engine.js"></script>
+    <script>
+        // 文字坠落逻辑
+        const c = "01ABCDEF#$@*&";
+        function create() {
+            const e = document.createElement('div');
+            e.className = 'p';
+            e.innerText = c[Math.floor(Math.random()*c.length)];
+            e.style.left = Math.random() * 100 + 'vw';
+            e.style.top = '-50px';
+            const dur = Math.random() * 3 + 2;
+            e.style.transition = `transform ${dur}s linear, opacity ${dur}s ease`;
+            document.body.appendChild(e);
+            setTimeout(() => {
+                e.style.transform = `translateY(${window.innerHeight + 100}px) rotate(360deg)`;
+                e.style.opacity = '0';
+            }, 50);
+            setTimeout(() => { e.remove(); }, dur * 1000);
+        }
+        const loop = setInterval(create, 40);
+        setTimeout(() => {
+            clearInterval(loop);
+            document.getElementById('box').style.opacity = '1';
+        }, 3000);
+    </script>
 </body>
 </html>
