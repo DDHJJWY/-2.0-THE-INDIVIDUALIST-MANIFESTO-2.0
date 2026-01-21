@@ -1,30 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE INDIVIDUALIST MANIFESTO 2.0</title>
-    <script>
-        (function() {
-            // 获取用户语言
-            const lang = navigator.language || navigator.userLanguage;
-            
-            // 逻辑判断：
-            // 如果是英文系统，跳到英文版
-            if (lang.startsWith('en')) {
-                window.location.replace('index_en.html');
-            } 
-            // 否则（包括中文或其他），跳到中文版
-            else {
-                window.location.replace('index_zh.html');
-            }
-        })();
-    </script>
-    <style>
-        body { background: #000; color: #333; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: monospace; }
-    </style>
+    <link rel="stylesheet" href="glitch.css">
 </head>
 <body>
-    <p>Redirecting to the manifesto...</p>
+
+    <div id="overlay">
+        <h1 class="title-glow">DECODED: MANIFESTO 2.0</h1>
+        <p style="color: #888;">Protocol successfully initialized.</p>
+        <div class="btn-container">
+            <a href="index_zh.html" class="enter-btn">中文/双语版</a>
+            <a href="index_en.html" class="enter-btn">ENGLISH ONLY</a>
+        </div>
+    </div>
+
+    <script src="engine.js"></script>
 </body>
 </html>
-
