@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>THE INDIVIDUALIST MANIFESTO 2.0</title>
+    <script>
+        (function() {
+            // 获取用户语言
+            const lang = navigator.language || navigator.userLanguage;
+            
+            // 逻辑判断：
+            // 如果是英文系统，跳到英文版
+            if (lang.startsWith('en')) {
+                window.location.replace('index_en.html');
+            } 
+            // 否则（包括中文或其他），跳到中文版
+            else {
+                window.location.replace('index_zh.html');
+            }
+        })();
+    </script>
+    <style>
+        body { background: #000; color: #333; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <p>Redirecting to the manifesto...</p>
+</body>
+</html>
+
