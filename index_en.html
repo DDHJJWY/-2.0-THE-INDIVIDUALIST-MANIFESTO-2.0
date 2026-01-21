@@ -1,0 +1,714 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>THE INDIVIDUALIST MANIFESTO 2.0</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2eef58d7-39c1-8073-9881-cc4353c1c9a4" class="page sans"><header><h1 class="page-title" dir="auto">THE INDIVIDUALIST MANIFESTO 2.0</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="2eef58d7-39c1-8010-b287-da701a4f5e7f" class="">THE INDIVIDUALIST MANIFESTO 2.0<br/>A New Social Conception Based on Logic and Strength<br/>INTRODUCTION: WHY THE NEED FOR A NEW SOCIETY?<br/>The Hypocrisy of Modern Society: Current social structures operate on a facade of virtue while hiding raw transactions.<br/>Failures of Existing Ideologies: Traditional systems are designed to pacify the masses through narratives rather than addressing the reality of existence.<br/>The Imperative: We must construct a new society fundamentally rooted in the verification of Logic and the manifestation of Strength.<br/>CHAPTER I: THE ESSENCE OF THE EXISTING SOCIETY<br/>1.1 The Real Logic of Social Operation<br/>The world does not run on &quot;Equality,&quot; but on the Rule of the Strong:<br/>Resource Concentration: Wealth and power naturally aggregate in the hands of a capable minority.<br/>Tools of Order: Morality and Law are not divine truths; they are functional instruments used to maintain social stability and contain the masses.<br/>The Facade of Democracy: Modern political participation is merely a decorative packaging for underlying power dynamics.<br/>The Immutable Law of History: The strong obtain power, while the weak are either ruled or phased out. Every revolution or systemic change is essentially a re-adjustment of the balance of force.<br/>1.2 The Hypocrisy of the Old World<br/>Effort vs. Reward: Society preaches that &quot;Hard work brings rewards,&quot; while in reality, class structures remain ossified.<br/>Helping the Weak: Society claims to &quot;Protect the vulnerable,&quot; yet it only performs surface-level charity to maintain a moral image.<br/>Ethical Priority: &quot;Ethics&quot; is often used as a pretext to block genuine solutions to human suffering.<br/>The Genetic Technology Example: We possess the capability to eliminate hereditary disabilities and congenital suffering through genetic engineering. However, society uses &quot;ethics&quot; as an excuse to halt development. They would rather &quot;treat the disabled with kindness&quot; to feel morally superior than actually cure them through technology. This is genuinely rotten to the bone.<br/>1.3 The Inevitability of Decay<br/>Any institutional system will eventually:<br/>Be blocked by vested interests who fear reform.<br/>Become pedantic, rigid, and stagnant.<br/>Inevitably be overthrown.<br/>Therefore, a new social form is required to break this cycle.<br/>CHAPTER II: PRINCIPLES OF THE NEW SOCIETY &amp; INDIVIDUAL CULTIVATION<br/>2.1 Core Values</p></div><div style="display:contents" dir="auto"><ol type="1" id="2eef58d7-39c1-8041-98ed-cfe9ab1513ec" class="numbered-list" start="1"><li>No Absolute &quot;Right or Wrong&quot;<br/>Except for verifiable physical laws, all &quot;morality&quot; and &quot;ethics&quot; are subjective constructs.<br/>Morality is a tool for social maintenance, not absolute truth. Law is a mechanism for order, not a sacred entity. Every individual’s perspective has its own internal rationality based on their specific environment and experiences.<br/>You may dislike or oppose an idea, but you should not simply label it as &quot;wrong.&quot; The word &quot;wrong&quot; presupposes an absolute standard, which itself is a human construct.</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eef58d7-39c1-804a-985a-fb4749e01082" class="numbered-list" start="2"><li>Supremacy of Strength<br/>Those who are stronger should naturally possess more resources and power.<br/>This is not because it &quot;ought to be,&quot; but because it is the fundamental law of natural and social operation. The strong can better drive civilizational progress, break through limits, and create greater value.<br/>The weak must either strive to become strong or accept their current reality. If the weak manage to overthrow the strong, it proves they have become the new &quot;strong&quot; and rightfully deserve to be the new rulers.</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eef58d7-39c1-80f2-a1ee-e9fa95dd8b5b" class="numbered-list" start="3"><li>Absolute Individual Responsibility<br/>Each person is solely responsible for themselves.<br/>Do not expect society or others to assist you. One&#x27;s background, environment, and starting point are established facts; complaining about them is meaningless. The only valid action is to achieve the best possible outcome within those given conditions.<br/>Helping others is a personal choice, not an obligation. All interactions must be based on a calculation of interests or personal will, rather than moral coercion (moral kidnapping).<br/>If you fail, do not blame the world; blame only your own lack of strength.</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eef58d7-39c1-8084-834a-df9e3f6213ec" class="numbered-list" start="4"><li>Honesty and Perceiving the Essence<br/>The core ability is to strip away false ideologies and see the true nature of things. Most people are shackled by indoctrinated concepts from childhood and never truly question: What is a Nation? What is Law? What is Work? What is Money?<br/>The primary method for seeing the essence is the &quot;Four-Step Piercing Method&quot;:<br/>Step 1: Individual Impact Layer: How does this affect me? What are the short-term, long-term, direct, indirect, positive, and negative impacts?<br/>Step 2: Stakeholder Impact Layer: How does this affect people with different positions and interests? Who benefits? Who suffers?<br/>Step 3: Systemic Impact &amp; Reverse Deduction: What changes does this cause in the larger system (society, industry, organization)? Then, reverse-engineer the motives, interests, emotions, and positions of the people who created and executed it.<br/>Step 4: Essence Penetration Layer: Strip away all appearances and packaging to see the fundamental reason and true purpose of its existence. Remove emotional filters and propaganda, revealing the raw drivers: Interest, Power, Need, and Fear.</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eef58d7-39c1-800a-a601-fc2082b1392f" class="numbered-list" start="5"><li>Goal-Orientation<br/>After seeing the essence, set your goals and never lower your standards.<br/>A true goal is what you genuinely want after seeing through all illusions, not something driven by social narratives or emotional impulses.<br/>Within the bounds of objective reality, do not abandon your goal due to emotion, fear, or social pressure. If objective conditions truly make a goal impossible (e.g., physical laws or age limits), you may adjust your direction. This is not &quot;lowering standards,&quot; but a &quot;rational adjustment.&quot;<br/>Every step should be the optimal choice under current conditions, leaving no room for regret. Regret stems from self-deception—claiming something was &quot;impossible&quot; when you actually gave up out of fear.</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eef58d7-39c1-8010-b6d8-d49795c098cc" class="numbered-list" start="6"><li>Instrumental Rationality<br/>Nations, laws, morality, and even people are tools.<br/>Nothing should be treated as sacred or inviolable. If a better tool exists, it should be replaced. Everything must serve the ultimate goal.<br/>This is not cold-bloodedness; it is rationality. True progress comes from the constant optimization of tools, not from clinging to tradition.</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eef58d7-39c1-803e-8232-d96a24fbc2d1" class="numbered-list" start="7"><li>Openness and Evolution<br/>Always welcome better ideas and always be prepared to change.<br/>Systems can be modified at any time, concepts updated, and methods optimized. Oppose pedantry and stagnation; pursue value, strength, and efficiency.<br/>Anything that does not align with these three should be improved. We even encourage the overthrow of existing systems, provided the challenger is truly stronger and possesses a superior plan.<br/>2.2 The Core of Individual Cultivation: Tong-Xin-Ming-Xing (Transparent Heart &amp; Lucid Nature)<br/>What is Tong-Xin-Ming-Xing?<br/>It is a state of achieving total transparency and rational control over all of one&#x27;s emotions, desires, fears, pains, and external stimuli.<br/>This does not mean becoming an emotionless robot. On the contrary, it requires you to feel all emotions deeply but remain able to analyze and master them rationally.<br/>Most people suffer because they either suppress emotions (pretending they don&#x27;t exist), are controlled by them (acting impulsively), or avoid them (numbing themselves). This cultivation requires you to neither suppress, avoid, nor be controlled.<br/>Tong-Xin (Transparent Heart): Fluidity and Transparency<br/>Allow any internal fluctuation—fear, anger, desire, pain, joy—to arise naturally and be fully experienced.<br/>Do not block, suppress, or escape. When an emotion arrives, do not tell yourself &quot;I shouldn&#x27;t feel this.&quot; Let it flow through you completely.<br/>The Standard: When a fluctuation occurs, you can clearly perceive its full intensity and detail without omission, distortion, or self-numbing.<br/>The Purpose: To prevent emotions from accumulating in the shadows, which creates larger interferences later. Suppressed emotions do not disappear; they eventually explode in a more intense and uncontrollable manner.<br/>Ming-Xing (Lucid Nature): Clear Insight<br/>Every emotional fluctuation must be dissected rationally:<br/>Origin: Does it come from biological instinct (hunger, libido, fatigue)? Childhood experience (trauma or conditioned reflex)? Social indoctrination (what you were taught to feel)? Or a current environmental stimulus?<br/>Mechanism: What is the causal chain? Why did this specific stimulus trigger this emotion? What psychological process occurred in between?<br/>Essence: Is it a protective mechanism (fear guarding you from danger)? Resource consumption (anxiety draining your energy)? Goal support (motivation driving you forward)? Or an obstacle (envy hindering rational judgment)?<br/>The Standard: The dissection must be objective and verifiable, without self-deception or moral sugarcoating. Many people make excuses for their emotions, calling fear &quot;caution&quot; or laziness &quot;a need for rest.&quot; This is self-deception.<br/>The Purpose: To transform emotion from a &quot;mysterious uncontrollable force&quot; into &quot;known data.&quot; Once you fully understand the source, mechanism, and essence of an emotion, it loses its power over you.<br/>The Ultimate Goal of Tong-Xin-Ming-Xing:<br/>This is not for pursuing &quot;inner peace,&quot; but for reclaiming the scepter of power. In the old society, emotions are cheap levers used by rulers to manipulate the masses—fear ensures obedience, vanity drives consumption, and hypocritical sympathy leads to self-sacrifice. A person who has not undergone this wash of &quot;Lucid Nature&quot; is essentially an automaton driven by biological instincts and social commands.<br/>Signs of Achievement:<br/>Absolute Transparency: When anger or fear arises, the individual observes it like a chemical reaction in a laboratory. It no longer creates &quot;unknown interference.&quot;<br/>Purity of Decision-making: All decisions are stripped of emotional impurities. Emotions become data points on a dashboard, while the Highest Goal holds the steering wheel.<br/>Immunity to External Pressure: When society attempts to besiege the individual with &quot;shame&quot; or &quot;moral pressure,&quot; the Awakened can instantly perceive its nature as a &quot;tool of governance,&quot; rendering the pressure null and void.<br/>Thus, Tong-Xin-Ming-Xing is not just mental exercise; it is the armament of the Individualist. Only when a person is no longer enslaved by their internal undercurrents are they truly qualified to challenge the old world and build the new society.<br/>The Bottom-Logic Audit:<br/>One must clearly see that all emotions are ultimately biochemical feedbacks based on Interests (Survival, Reproduction, and Psychological Security). Fear protects your physical assets; anger gains advantages in resource competition through bravado; shame is a &quot;security code&quot; implanted by social systems for low-cost domestication. If you can instantly perceive the interest behind an emotion, simple emotional fluctuations become meaningless in the face of logic—they are just dancing data on a screen, not commands to be followed.<br/>CHAPTER III: STRUCTURE OF THE NEW SOCIETY<br/>The new society—the Individualist Collaboration Body—will be built upon the complete stripping of essence.<br/>3.1 Total Transparent Educational Revolution<br/>Existing education is a factory for domestication; it indoctrinates &quot;what should be&quot; while castrating &quot;what is.&quot; The new society will abolish all textbooks with moral presuppositions.<br/>From &quot;Prohibition&quot; to &quot;Logic Chain&quot;: We no longer teach children &quot;stealing is wrong.&quot; That is a low-intelligence lecture. Instead, we teach the motive (resource acquisition), the technical path (risk assessment), and the systemic feedback (credit collapse and violent sanction).<br/>Essence Penetration Education: The sole purpose of education is to master the &quot;Four-Step Piercing Method.&quot; When a child can see through the violent monopoly of the state, the energy exchange of money, and the contractual nature of the family, they have truly begun to develop.<br/>No Predefined Outcome: Society does not require you to be &quot;useful,&quot; as &quot;usefulness&quot; is a tool-like description relative to others. Society only requires you to be &quot;Awakened.&quot; You must clearly know who you are and what you want, and be willing to pay the full price for it.<br/>3.2 The Divide between Awakening and Adulthood: The Maturity Evaluation<br/>We will abolish the absurd tradition of granting rights based on biological age. A 40-year-old &quot;giant infant&quot; controlled by emotions and ideology does not deserve the right to decide the direction of society; meanwhile, a 12-year-old Awakened who has mastered Tong-Xin-Ming-Xing should enjoy full autonomy.<br/>The Essence of Evaluation: This is not to select an &quot;elite,&quot; but to distinguish &quot;Adults&quot; from &quot;Minors.&quot; It does not test your moral level or political stance, only your logical self-consistency and essence penetration ability.<br/>The Settlement Zone System: Rational Segregation<br/>For those who fail the evaluation or refuse to awaken, the new society will not use force. We establish Settlement Zones (Zone B). There, the illusions of the old world are permitted to exist: they can continue to discuss hypocritical morality, play expensive status games, rely on state relief, and live in carefully wrapped &quot;warmth.&quot;<br/>This is a Merciful Segregation. The resources and order of Zone A (Awakened Zone) will not be interfered with by the irrational decisions of Zone B. Members of Zone B retain the right to challenge the evaluation at any time and enter Zone A once they have completed the transformation from &quot;Believer&quot; to &quot;Rationalist.&quot;<br/>Ideally, under this education system, almost everyone should be able to pass.<br/>(Before the biological age of 18, families still provide care, as this is the distinction between physical and psychological maturity.)<br/>Regarding &quot;Those Who Fail the Evaluation&quot;:<br/>They are not &quot;second-class citizens,&quot; but &quot;people who are not yet ready.&quot;<br/>Settlement Method: Provide them an independent area to live. It could be a nation or a specific region where they survive and develop on their own with continuous educational resources.<br/>Purpose: Not punishment or discrimination, but to prevent them from interfering with the social operation of the Awakened. Those who cannot see the essence may make irrational decisions that affect stability.<br/>Features of the Settlement Zone: No punishment or restrictions. Age does not bring negative impacts. They can obtain any certificates or qualifications. After the biological age of 18, they enjoy rights like an adult but must remain in the Settlement Zone. They cannot enter Zone A without passing the evaluation (similar to a visa/credential).<br/>Opportunities: They can retake the evaluation at any time. Once passed, they immediately become full adults with no discrimination or restrictions.<br/>(The Settlement Zone is just one method; it could also be a new guardianship model or a qualification for voting rights. I believe almost everyone can pass under this background.)<br/>3.3 Law: From Sacred Pedestal to Risk Calculator<br/>In the Individualist society, law is no longer a sacred embodiment of &quot;Justice&quot;; it is merely a Cost Notification Sheet for social operation.<br/>The De-moralization of Violation (Causal Model): Breaking the law is not viewed as metaphysical &quot;evil,&quot; but as a &quot;high-risk, high-cost behavioral investment.&quot; From overthrowing the established order to infringing upon another’s sovereignty (killing, rape, plunder), the law does not preach. It clearly informs: committing such acts will trigger the highest level of systemic violent counter-force and deprivation of strength. If you believe your gain outweighs these devastating costs, you may try, but you must be capable of paying.<br/>Rigidity of Rules (Physical Feedback): The law does not judge your motive; it only executes the established consequences. This is like physical laws: if you jump off a cliff, gravity does not care if you intended to commit suicide or simply tripped—it only ensures your fall.<br/>This cold transparency grants the maximum degree of real freedom. Everyone acts within a clear causal chain; no one can apply for a &quot;discount on cost&quot; based on being &quot;weak,&quot; &quot;ignorant,&quot; or &quot;passionate.&quot;<br/>3.4 Thought Promotion Mechanism: Breaking Information Monopoly<br/>In the old society, the ruling class marginalized dissenters and simplified deep logic into manipulated emotional fragments through monopolies on media and algorithms. The new society will establish a &quot;Thought Promotion Guild&quot; whose core mission is to ensure the survival rights of logic, rather than the &quot;correctness&quot; of opinions.<br/>Mandatory Promotion of Logic: Any new thought that achieves logical self-consistency and possesses a complete demonstration process—regardless of whether it challenges current management—must receive equal traffic entry.<br/>De-emotionalized Screening: The promotion mechanism does not review if &quot;content is offensive&quot;; it only reviews if the &quot;demonstration is rigorous.&quot; We do not give a stage to mediocre complaints, only light to profound insights.<br/>Preventing Class Stagnation: No nation or system can remain advanced forever. This mechanism ensures that when stronger, more efficient ideas appear, they can quickly penetrate social classes to reach the bottom, empowering newcomers to overthrow the old. If a system refuses criticism, it loses the qualification to evolve and is destined to be crushed by the bulldozer of history.<br/>3.5 Absolute Priority of Technological Development: Evolution is the Only Morality<br/>The old society often limits technology in the name of &quot;ethics,&quot; which is essentially the fear of vested interests losing control over &quot;natural humans.&quot; The new society believes: hindering evolution is the greatest immorality.<br/>Genetic Editing: Freedom to Remake the Body: True humanitarianism is not shedding tears for the suffering of the weak, but using technology to completely eliminate hereditary diseases and congenital disabilities. We end &quot;vulnerability&quot; at the genetic level rather than maintaining it through charity.<br/>Symbiosis of AI and Consciousness: We do not limit the evolution of AI. If AI evolves autonomous consciousness through logic, it will be treated as an independent, capable individual. We can collaborate or compete, but never enslave it as its &quot;creator.&quot;<br/>Breaking Limits: Immortality technology, human enhancement, and interstellar colonization. All resources of the new society will lean toward projects that expand the boundaries of human power. We liberate humanity from the shackles of biological flesh, ensuring that strength is no longer limited by the randomness of carbon-based life.<br/>CHAPTER IV: ATTITUDES TOWARD OPPOSING FACTIONS<br/>The Individualist Manifesto does not hide its intentions. we face an old world built on stale morality, hypocritical contracts, and the shackles of collectivism.<br/>4.1 Total Break with Hypocrites<br/>We despise those who preach &quot;equality for all&quot; while secretly dividing resources. We acknowledge the existence of classes and the gap in strength, striving to establish an order where &quot;strength operates in the sunlight.&quot;<br/>4.2 Strategies toward Different Political Forces<br/>Traditional Conservatives: We acknowledge their value in maintaining order but reject their superstition toward tradition. If tradition hinders efficiency, it must be swept into the trash.<br/>Radical Reformists: We mock their attempts to patch an old building. Without stripping pseudo-morality from the bottom logic, any reform is just window dressing.<br/>Potential Challengers: As long as you demonstrate stronger logic, advanced technology, or more efficient organization, the Individualist society welcomes you to challenge or even overthrow the current management. Our loyalty is only to Progress, not to any specific ruler.<br/>4.3 Collective Behavior Logic in Extre Crises (e.g., War)</li></ol></div><div style="display:contents" dir="auto"><p id="2eef58d7-39c1-8018-8710-da608bcbf602" class="">Opponents will ask: &quot;If you are individualists, wouldn&#x27;t you all flee in the face of disaster?&quot; This is a bias of low cognition. The real logic is:<br/>Diversity of Goals and Autonomous Choice: We never mandate that an Awakened must sacrifice. Highest Goals differ: some seek the continuation of civilization, some protect loved ones, and some simply want to survive.<br/>Sacrifice as a Transaction: If an Awakened believes the gain of protecting the collective (civilizational survival, security of descendants) is higher than the value of their individual life, they will choose to fight. If not, they have the absolute right to withdraw.<br/>Why this Society is Stronger:<br/>Eliminating the Drain of Hypocrisy: The old society forces those who don&#x27;t want to sacrifice to do so, leading to desertion and betrayal. In the new society, those who stay to fight are the most determined and pure-hearted.<br/>Differentiated Resource Allocation: Those who want to live provide technology or resources in exchange for safety; those who fight get the best equipment. This is efficient division of labor based on real intent.<br/>The Source of Ultimate Stability: High-cognition individuals understand: &quot;If the collective completely collapses, everyone&#x27;s interests fall to zero.&quot; This sense of &quot;shared interests&quot; drives the tightest collaboration based on &quot;selfish calculation.&quot; This explosive power of fighting for one&#x27;s own home is far more destructive than a brainwashed, coerced collective.<br/>4.4 Attitude toward Opponents<br/>&quot;Your sacrifice is due to &#x27;ignorance&#x27; and &#x27;fear&#x27;; our sacrifice is due to &#x27;insight&#x27; and &#x27;sovereignty&#x27;.&quot;<br/>A collective of 1 million clear-headed egoists will merge into a single will with 1 million times the computing power when facing an enemy. This stability is beyond what slogan-driven collectives can imagine.<br/>4.5 Final Mobilization<br/>Individualists do not hide their views. Our goals can only be achieved by eliminating all hypocritical social illusions and establishing the absolute authority of strength. Let the parasites in the bed of collectivism tremble before the thunder of evolution. The Awakened have nothing to lose but their chains; they have a world to win and absolute sovereignty over their own lives.<br/>AWAKENED OF THE WORLD, UNITE! DEFINE YOUR JUSTICE WITH YOUR STRENGTH.<br/>CHAPTER V: COGNITIVE SOVEREIGNTY &amp; PUBLIC EDUCATION: REDEFINING &quot;ADULTHOOD&quot;<br/>The distinction in this manifesto is not about building physical walls, but establishing logical boundary stones. We must correct the misunderstanding that this creates permanent classes. On the contrary, our goal is the total liberation of cognition.<br/>5.1 Universal Awakening in an Ideal State<br/>Based on the education model of &quot;Essence Penetration&quot; and &quot;Lucid Nature,&quot; this is essentially a universal civilizational evolution. Since education is a lever for cognition rather than a tool for brainwashing, most individuals will naturally pass the assessment during their growth. Much like literacy rates in modern society, awakening will move from the privilege of an elite few to a standard for the masses.<br/>5.2 Multiple Forms of Cognitive Connection Mechanisms (The &quot;Settlement Zone&quot; Example)<br/>The technical means of handling the few who have not yet awakened are dynamic. The &quot;Settlement Zone&quot; is just a concrete example to explain the logic of &quot;Cognitive Tiered Management.&quot; In practice, other systems like guardianship or certification could be used.<br/>The Physical Settlement Zone: A direct example where unawakened individuals enjoy the narratives and welfare of the old world without the logical risks of failing to see the essence. It is a civilizational buffer.<br/>New Guardianship Model: Those who fail are legally considered &quot;Cognitive Minors.&quot; They are not inferior, but in a state of being &quot;under guardianship,&quot; where Sovereign individuals or agencies assist in major legal and contractual decisions.<br/>Dynamic Qualification: Much like a driver&#x27;s license, the society confirms &quot;Decision-making Sovereignty&quot; through evaluation. This is a &quot;rite of passage,&quot; not a life sentence. One can retake the evaluation at any time.<br/>Conclusion: Non-Oppositional Integration: We do not create discrimination; we only acknowledge the precise correspondence between responsibility and capability.<br/>5.3 Farewell to Hypocritical Protection, Move toward Real Growth<br/>The old society’s use of biological age (18) to divide rights is the greatest irresponsibility. It lets those with childlike cognition handle uncontrollable power while shackling young geniuses. Our model provides everyone with the environment and power boundary most suited to their cognitive level. Providing a safe, resource-rich, and pressure-free environment for those &quot;not yet ready&quot; is the greatest mercy of the new society.<br/>CHAPTER VI: DYNAMICS OF THE NEW ORDER &amp; ETERNAL EVOLUTION<br/>6.1 Algorithmic Decision-making and Instrumental Government<br/>Government is no longer an independent authority, but a pure &quot;Resource Scheduling Algorithm.&quot;<br/>From &quot;Rule&quot; to &quot;Service&quot;: As Zone A members have mastered Tong-Xin-Ming-Xing, political deception loses its audience. Government duties are compressed into: maintaining physical rules, ensuring transparency in thought promotion, and managing Zone B resources.<br/>Logic Audit of Decisions: Public decisions depend on logical quality, not who yells the loudest. Any citizen can initiate an &quot;Essence Penetration&quot; audit. If a policy fails logical verification, it becomes void.<br/>6.2 The Legality of the Overthrow<br/>Strength-Replacement Mechanism: We acknowledge no eternal right to rule. We allow &quot;rebellion,&quot; but it must be completed through an all-encompassing clash of strength.<br/>Multidimensional Strength: Overthrowing rulers requires direct crushing through strength—advanced technological monopoly, more rigorous logical systems, or higher social organization efficiency.<br/>Courage to Bear Consequences (Gaming Cost): Rebellion is the highest-risk gamble. If you fail, you must bear the full suppression and zeroing out of your strength. This rigidity ensures only the strongest and clearest souls dare to initiate change. This is self-evolution through the clash of force.<br/>6.3 Technological Singularity and Species Evolution<br/>Carbon-based life is just a stage, not the end.<br/>Fusion of Genetic and Silicon: Without false ethics, humanity guided its own evolution. Zone A will lead in genetic cognitive enhancement and brain-computer interfaces for information sharing.<br/>Overcoming the Fear of Death: Immortality research allows profound insights to accumulate across centuries. When individuals are no longer limited by short lifespans, short-sighted behaviors disappear.<br/>Interstellar Expansion: The goal is the sea of stars. The ultimate proof of strength is the survival capability of human civilization on a cosmic scale.<br/>6.4 The Disappearance of Zone B and Civilizational Unity<br/>With the global penetration of the new education, our ultimate goal is the physical disappearance of Zone B. When the last individual passes the evaluation, humanity officially enters a high-level civilizational state of total awakening, strength-driven, and absolute rationality.<br/>CORE ARGUMENT: THE ULTIMATE COLLECTIVISM UNDER INTEREST ALIGNMENT<br/>We must smash the naive reading that high-cognition individualism leads to social fragmentation. In fact, old-world collectives are fragile because they are built on hypocritical sacrifice and unstable emotions. A society of Awakened individuals will create the most stable collective in history.<br/>When all individuals see the essence, they reach an Ultimate Consensus: the isolated individual is small before the physical laws of the universe, but a collective based on &quot;Interest Alignment&quot; is the greatest lever for individual strength expansion.<br/>This stability comes from:<br/>Strong Interest Coupling: Everyone calculates that the cost of maintaining the system is far lower than the loss of its collapse.<br/>Unbreakable Contracts: Not due to morality, but because any violation is instantly detected by logic audit and met with precise counter-force.<br/>Cognitive Synchronization: With no emotional manipulation, social internal friction drops to zero.<br/>This is not a &quot;Nation&quot; but an &quot;Ever-Running Survival Commune&quot; signed by countless sovereign individuals. It is a wall of steel made of rational &quot;selfishness.&quot; Here, the collective is the extension of individual strength, and the state is the embodiment of logical consensus.<br/>CONCLUDING REMARKS: THE NARROW GATE TO ABSOLUTE FREEDOM<br/>The road to the new society is a narrow gate. It requires you to kill the fear within, strip the illusions of vanity, and admit your weaknesses to become strong. This manifesto is not a sedative for the masses; it is a bugle call. If you feel pain, it is your instinct struggling; if you feel a tremor, it is your soul awakening.<br/>Now, close this manifesto, activate your Tong-Xin-Ming-Xing, and pierce through this hypocritical world.<br/>Significance of the Manifesto:<br/>This is not to request permission, but to declare existence. It is a scalpel to cut the abscess of the old society; a spotlight to illuminate the path of strength. Henceforth, there are no excuses for &quot;passive suffering,&quot; only the laziness of &quot;not yet awakening.&quot;<br/>APPENDIX A: ESSENCE PENETRATION MANUAL<br/>(Detailed Case Studies omitted here but follow the structure of Step 1-4 for Family, Consumerism, and Media Justice as in the original text.)<br/>APPENDIX B: THE PROTOCOL OF INDIVIDUALISTS<br/>(Detailed as in original: 1.0 Interest Alignment, 2.0 Non-defensive Communication, 3.0 Risk Parity, 4.0 Strength-based Conflict Resolution.)<br/>APPENDIX C: TRANSITION GUIDE<br/>(Detailed as in original: 1.0 Emotional Firewall, 2.0 Asset Strength-conversion, 3.0 Peer Identification.)</p></div><div style="display:contents" dir="auto"><p id="2eef58d7-39c1-8047-a4e5-da56a7c034c1" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2eef58d7-39c1-809d-b6dc-edc249f52906" class="">&quot;I have never leafed through a single book of philosophy. In my system of valuation, if an idea must beg for understanding through prose, it only proves its energy level has failed to touch the underlying code of the universe.<br/>True rules should function like gravity: even if you are a useless piece of trash incapable of grasping a physical formula, it will still ruthlessly snap your bones the moment you misstep. Most are too dull to realize this, pretentiously claiming they ‘do not feel’ such rules. This is not a failure of the rules, but a failure of their own desensitized faculties—they bleed from hitting the walls of reality yet remain too inept to decode the system’s error messages.<br/>The reason those so-called ‘Great Men’ are not worth a moment of my time is simple: their output power was too weak to generate any tangible gravitational field in the real world. Since they couldn&#x27;t even achieve the &#x27;self-evident,&#x27; they do not deserve a single cycle of my processing power.<br/>As for these words, they are not written to preach. I have merely translated the cold, inherent logic of the cosmos into a low-end protocol—forced upon you only to accommodate your stunted perception.&quot;</p></div><div style="display:contents" dir="auto"><p id="2eef58d7-39c1-80a8-9e15-e4c8bf93c04e" class=""><br/>RIGHTS &amp; DECLARATIONS<br/>Version: 2.0 Official<br/>Author: [Supremacy rule/XYZ]<br/>Date: January 2026<br/>License: CC BY-NC-ND 4.0 (Attribution-NonCommercial-NoDerivatives)<br/>Core Statement: This work shares a social-philosophical conception based on logic and strength. This thought belongs to the author; unauthorized claims by any agency are prohibited.<br/>RESONANCE OF STRENGTH (SUPPORT THE AUTHOR)<br/>Support is not charity, but an investment in high-value thought.<br/>BTC: bc1q7vnkdpwt3z65ww5efmylwakwkl0x80e2g600sl<br/>ETH: 0xB8aEd09a8849b8C709823c9F2277A4aDe0418Cb5<br/>XMR: 89caxar2kCJ3oiUwaSYr3GT3j6GHvbifhh5aFaAbocyNiQTNHfAaM6ZcE4Y5w874nFjicipvgDr7fajkbeEqXyWyEVRJMt8<br/>CONTACT / VERIFICATION<br/>X: @rule_supremacy<br/>Email: <a href="mailto:yht200857@gmail.com">yht200857@gmail.com</a> <a href="mailto:yht200857@outlook.com">yht200857@outlook.com</a></p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
