@@ -1,66 +1,119 @@
-<p align="center">
-  <svg width="800" height="200" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" style="stop-color:#ff0000;stop-opacity:1">
-          <animate attributeName="stop-color" values="#ff0000;#550000;#ff0000" dur="5s" repeatCount="indefinite" />
-        </stop>
-        <stop offset="100%" style="stop-color:#000000;stop-opacity:1">
-           <animate attributeName="stop-color" values="#000000;#330000;#000000" dur="5s" repeatCount="indefinite" />
-        </stop>
-      </linearGradient>
-    </defs>
-    <rect width="800" height="200" fill="url(#grad)" />
-    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-size="50" fill="white" font-weight="bold" letter-spacing="10">
-      MANIFESTO 2.0
-      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" />
-    </text>
-    <path d="M0 180 Q 200 150 400 180 T 800 180" stroke="red" fill="transparent" stroke-width="2">
-      <animate attributeName="d" values="M0 180 Q 200 150 400 180 T 800 180;M0 180 Q 200 210 400 180 T 800 180;M0 180 Q 200 150 400 180 T 800 180" dur="4s" repeatCount="indefinite" />
-    </path>
-  </svg>
-</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DECODING MANIFESTO 2.0</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #ff3e3e;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-<p align="center">
-  <b>「 逻辑是唯一的权威。实力定义你的正义。 」</b><br>
-  <i>"Logic is the sole authority. Power defines your justice."</i>
-</p>
+        /* 坠落动画 */
+        .char {
+            position: absolute;
+            top: -50px;
+            font-size: 20px;
+            opacity: 0;
+            animation: drop 2.5s ease-in forwards;
+        }
 
----
+        @keyframes drop {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            30% { opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
 
-## 📖 ACCESS CHANNELS / 核心阅览通道
+        /* 中央解密框 */
+        #main-frame {
+            z-index: 100;
+            text-align: center;
+            border: 1px solid #ff3e3e;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 20px #ff3e3e;
+            display: none; /* 初始隐藏，等坠落一会儿再显示 */
+        }
 
-| Edition / 版本 | Description / 描述 | Link / 链接 |
-| :--- | :--- | :--- |
-| **🌐 Web (Bilingual)** | **[推荐]** 完美双语网页排版 | **[Read Online / 在线阅读](https://ddhjjwy.github.io/-2.0-THE-INDIVIDUALIST-MANIFESTO-2.0/)** |
-| **📄 PDF Document** | 权威离线收藏版 | [Download PDF](manifesto_v2.pdf) |
-| **𝕏 Social Media** | 追踪思想动态 | [@rule_supremacy](https://x.com/rule_supremacy) |
+        .glitch {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff;
+            animation: glitch 500ms infinite;
+        }
 
----
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff; }
+            15% { text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff; }
+            16% { text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff; }
+            49% { text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff; }
+            50% { text-shadow: 0.035em 0.035em 0 #00fffc, 0.05em 0.05em 0 #fc00ff; }
+            99% { text-shadow: 0.035em 0.035em 0 #00fffc, 0.05em 0.05em 0 #fc00ff; }
+            100% { text-shadow: -0.025em 0 0 #00fffc, -0.025em -0.025em 0 #fc00ff; }
+        }
 
-## ⚡ CORE CONCEPTS / 宣言核心
+        .btn-group { margin-top: 30px; display: flex; gap: 20px; justify-content: center; }
+        .btn {
+            border: 1px solid #ff3e3e;
+            padding: 10px 20px;
+            color: #ff3e3e;
+            text-decoration: none;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .btn:hover { background: #ff3e3e; color: #000; }
+    </style>
+</head>
+<body>
 
-> [!IMPORTANT]
-> ### 1. 认知主权 / Cognitive Sovereignty
-> **You do not own what you cannot defend.** 你并不拥有你无法防御的东西。
+    <div id="main-frame">
+        <div class="glitch">MANIFESTO 2.0 DECODED</div>
+        <p>SYSTEM ACCESS GRANTED</p>
+        <div class="btn-group">
+            <a href="index_zh.html" class="btn">ZH/BILINGUAL</a>
+            <a href="index_en.html" class="btn">ENGLISH ONLY</a>
+        </div>
+    </div>
 
-> [!CAUTION]
-> ### 2. 逻辑权威 / Logical Authority
-> **Reject moral kidnapping.** 剥离一切情感的寄生，拒绝道德绑架。
+    <script>
+        // 1. 生成不断下降的乱码字符
+        const characters = "01010101ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&*";
+        function createChar() {
+            const char = document.createElement('div');
+            char.innerText = characters.charAt(Math.floor(Math.random() * characters.length));
+            char.classList.add('char');
+            char.style.left = Math.random() * 100 + "vw";
+            char.style.animationDuration = (Math.random() * 2 + 1) + "s";
+            document.body.appendChild(char);
+            
+            setTimeout(() => { char.remove(); }, 3000);
+        }
 
-> [!TIP]
-> ### 3. 实力正义 / Power Justice
-> **Abandon the illusion of hypocritical contracts.** 放弃对虚伪契约的幻想。
+        // 持续生成坠落效果
+        const rain = setInterval(createChar, 50);
 
----
+        // 2. 延迟 2 秒后展现解密后的中央入口
+        setTimeout(() => {
+            document.getElementById('main-frame').style.display = 'block';
+        }, 2000);
 
-## 🛡️ AUDIT & SUPPORT / 审计与支持
-
-* **BTC**: `bc1q7vnkdpwt3z65ww5efmylwakwkl0x80e2g600sl`
-* **ETH**: `0xB8aEd09a8849b8C709823c9F2277A4aDe0418Cb5`
-
----
-<p align="center">
-  <i>"In this wasteland, everyone is their own God."</i><br>
-  <img src="https://readme-typing-svg.herokuapp.com?font=monospace&size=20&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&width=435&lines=%E5%9C%A8%E8%BF%99%E7%89%87%E8%8D%92%E5%8E%9F%E4%B8%8A%EF%BC%8C%E6%AF%8F%E4%B8%AA%E4%BA%BA%E9%83%BD%E6%98%AF%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%8A%E5%B8%9D%E3%80%82" />
-</p>
+        // 3. 语言自动识别跳转（如果你不想让用户手动选，可以取消下面代码的注释）
+        /*
+        setTimeout(() => {
+            const lang = navigator.language || navigator.userLanguage;
+            window.location.href = lang.startsWith('en') ? 'index_en.html' : 'index_zh.html';
+        }, 5000);
+        */
+    </script>
+</body>
+</html>
