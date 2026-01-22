@@ -11,6 +11,9 @@
 
 ### 🛡️ 协议阅览入口 / ACCESS GATEWAY
 
+> **[ ⚠️ LOGIC WARNING / 逻辑偏差警示 ]** > **中文版本为该思想体系的唯一逻辑母体。** 英文翻译版本仅作为低维模拟，受限于语言结构的天然缺陷，存在不可避免的语义损耗与逻辑偏差。任何深度推演或质疑，请务必以**中文母本**为最终判准。  
+> *The English version is a simplified simulation and may contain semantic loss. For definitive interpretation, refer to the **Chinese Master Source**.*
+
 | 目标协议 / Target | 视觉风格 / Style | 认证链接 / Link |
 | :--- | :--- | :--- |
 | **🌐 双语主站 (主入口)** | **赛博渐变 / 动态解密** | [**【立即进入 / ENTER】**](https://ddhjjwy.github.io/-2.0-THE-INDIVIDUALIST-MANIFESTO-2.0/index_zh.html) |
